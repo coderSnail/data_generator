@@ -1,0 +1,38 @@
+/**{
+    margin: 0;
+    padding: 0;
+}*/
+
+.el-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 100px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .30);
+}
+
+.el-main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 0;
+    /*overflow-y: scroll;*/
+}
+
+.center {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.el-input {
+    width: 160px;
+}
+
+.table{
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .30);
+}

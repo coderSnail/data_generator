@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试数据自动生成器</title>
+    <!-- 引入 elementUI 的样式表 -->
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>Try Element</p>
+    </el-dialog>
+</div>
+</body>
+
+<!-- 引入 vue -->
+<script src="js/vuejs-2.5.16.js"></script>
+<!-- 引入 axios -->
+<script src="js/axios-0.18.0.js"></script>
+<!-- 引入 elementUI -->
+<script src="element-ui/lib/index.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return { visible: false }
+        }
+    })
+</script>
+</html>
