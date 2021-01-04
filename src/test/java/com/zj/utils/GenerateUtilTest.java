@@ -29,7 +29,7 @@ class GenerateUtilTest {
     }
 
     @Test
-    void randomUUID() {
+    void genUUID() {
         System.out.println(GenerateUtil.genUUID());
     }
 

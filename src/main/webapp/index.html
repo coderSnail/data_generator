@@ -13,37 +13,37 @@
     <!--    <el-container>-->
     <!-- 头部区域, mysql 相关配置 -->
     <!--        <el-header>-->
-    <div class="top">
-        <el-form ref="mysql" :model="form.mysql" label-suffix=":" label-width="60px" size="small">
-            <el-row type="flex" justify="center" align="middle">
-                <el-col :sm="3" :xs="24">
+    <div class="top_outer">
+        <el-form class="top_inner" ref="mysql" :model="form.mysql" label-suffix=":" label-width="60px" size="small">
+            <el-row type="flex">
+                <el-col :sm="3">
                     <el-form-item label="ip" style="margin: 0">
                         <el-input v-model="form.mysql.ip"></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :sm="3" :xs="24">
+                <el-col :sm="3">
                     <el-form-item label="端口" style="margin: 0">
                         <el-input v-model="form.mysql.port"></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :sm="3" :xs="24">
+                <el-col :sm="3">
                     <el-form-item label="数据库" style="margin: 0">
                         <el-input v-model="form.mysql.database"></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :sm="3" :xs="24">
+                <el-col :sm="3">
                     <el-form-item label="用户名" style="margin: 0">
                         <el-input v-model="form.mysql.username"></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :sm="3" :xs="24">
+                <el-col :sm="3">
                     <el-form-item label="密码" style="margin: 0">
                         <el-input v-model="form.mysql.password"></el-input>
                     </el-form-item>
                 </el-col>
 
-                <el-col :sm="7" :xs="24">
-                    <el-form-item style="margin: 0" style="alignment: right">
+                <el-col :sm="9">
+                    <el-form-item style="margin: 0">
                         <el-button type="primary" plain @click="importConfig">导入</el-button>
                         <el-button type="primary" plain @click="exportConfig">导出</el-button>
                     </el-form-item>
@@ -57,48 +57,35 @@
     <!--        <el-main>-->
 
     <div class="main">
-        <el-row>
+        <el-form class="table" ref="tables"  label-suffix=":" label-width="60px" size="small" v-for="table in form.tables" :key="form.tables.name">
+            <el-row>
+                <el-col :sm="5"> {{table.name}} 字段配置</el-col>
+                <el-col :sm="8" :offset="11" style="text-align: right">
+                    <el-button type="primary" plain size="small" >添加字段</el-button>
+                    <el-button type="danger" plain size="small" >删除此表</el-button>
+                </el-col>
+            </el-row>
+<!--            <hr/>-->
+            <!--                   字段名
+                               外键
+                               测试数据类型
+                               参数-->
 
-            11<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
-            asd<br>
+            <el-row type="flex" :gutter="10" v-for="field in table.fields">
+                <el-col :sm="3">
+                    <el-form-item label="字段名" style="margin: 0">
+                        <el-input v-model="field.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :sm="3">
+                    <el-form-item label="外键" style="margin: 0">
+                        <el-input v-model="field.ref"></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
 
 
-        </el-row>
+        </el-form>
     </div>
 
     <!--        </el-main>-->
@@ -119,20 +106,47 @@
         data: {
             form: {
                 mysql: {
-                    ip: "localhost",
+                    ip: 'localhost',
                     port: '3306',
-                    database: "demo",
-                    username: "root",
-                    password: "940324"
-                }
+                    database: 'demo',
+                    username: 'root',
+                    password: '940324'
+                },
+                tables: [{
+                    name: 'stu',
+                    fields: [{
+                        name: 'id',
+                        ref: '',
+                        method: 'UUID',
+                        args: ''
+                    }, {
+                        name: 'name',
+                        ref: '',
+                        method: 'genChineseName',
+                        args: ''
+                    }]
+                }, {
+                    name: 'class',
+                    fields: [{
+                        name: 'id',
+                        ref: '',
+                        method: 'genUUID',
+                        args: ''
+                    }, {
+                        name: 'stu_id',
+                        ref: 'stu.id',
+                        method: '',
+                        args: ''
+                    }]
+                }]
             }
         },
         methods: {
             importConfig() {
-                console.log("导入配置");
+                console.log('导入配置');
             },
             exportConfig() {
-                console.log("导出配置");
+                console.log('导出配置');
             }
         }
     })

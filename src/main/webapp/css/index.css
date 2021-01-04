@@ -9,29 +9,42 @@ body, html{
     width: 100%;
 }
 
-.top{
-    position: fixed;
+
+.top_inner {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.top_outer{
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background: #fff;
     z-index: 5;
     height: 40px;
-    padding: 10px 0 0 0;
-    margin: auto;
-    box-shadow: 0 5px 10px hsla(217,8%,67%,.4);
-    /*vertical-align: middle;*/
+    /*padding: 20px;*/
+    box-shadow: 0 8px 15px hsla(217,8%,67%,.4);
 }
 
-.top input {
-    width: 80px;
-    padding: 0;
-    text-align: center;
-}
+/*.top_outer input {*/
+/*    width: 80px;*/
+/*    padding: 0;*/
+/*    text-align: center;*/
+/*}*/
 
 .main{
     position: absolute;
     top: 50px;
+    width: 100%;
+}
+
+.table{
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .30);
 }
 
 
