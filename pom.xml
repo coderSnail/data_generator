@@ -12,10 +12,9 @@
   <groupId>com.zj</groupId>  
   <artifactId>data_generator</artifactId>  
   <version>0.0.1-SNAPSHOT</version>  
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <name>data_generator</name>  
-  <description>Demo project for Spring Boot</description>  
-  <properties> 
+  <properties>
     <java.version>1.8</java.version> 
   </properties>  
   <dependencies> 
@@ -38,11 +37,11 @@
       <artifactId>lombok</artifactId>  
       <optional>true</optional> 
     </dependency>  
-    <dependency> 
+    <dependency>
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-test</artifactId>  
       <scope>test</scope> 
-    </dependency>  
+    </dependency>
     <dependency> 
       <groupId>com.alibaba</groupId>  
       <artifactId>druid</artifactId>  
@@ -50,7 +49,11 @@
     </dependency> 
   </dependencies>  
   <build> 
-    <plugins> 
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <plugin> 
         <groupId>org.springframework.boot</groupId>  
         <artifactId>spring-boot-maven-plugin</artifactId>  

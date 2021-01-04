@@ -1,8 +1,42 @@
-/**{
+*{
     margin: 0;
     padding: 0;
-}*/
+    /*border: 1px solid red;*/
+}
 
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+.top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 5;
+    height: 40px;
+    padding: 10px 0 0 0;
+    margin: auto;
+    box-shadow: 0 5px 10px hsla(217,8%,67%,.4);
+    /*vertical-align: middle;*/
+}
+
+.top input {
+    width: 80px;
+    padding: 0;
+    text-align: center;
+}
+
+.main{
+    position: absolute;
+    top: 50px;
+}
+
+
+
+/*
 .el-header {
     position: fixed;
     top: 0;
@@ -18,7 +52,7 @@
     right: 0;
     top: 100px;
     bottom: 0;
-    /*overflow-y: scroll;*/
+    !*overflow-y: scroll;*!
 }
 
 .center {
@@ -35,4 +69,4 @@
     margin: 20px;
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .30);
-}
+}*/

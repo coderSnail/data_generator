@@ -5,13 +5,104 @@
     <title>测试数据自动生成器</title>
     <!-- 引入 elementUI 的样式表 -->
     <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+    <!-- 引入自定义 index.css -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div id="app">
-    <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-        <p>Try Element</p>
-    </el-dialog>
+    <!--    <el-container>-->
+    <!-- 头部区域, mysql 相关配置 -->
+    <!--        <el-header>-->
+    <div class="top">
+        <el-form ref="mysql" :model="form.mysql" label-suffix=":" label-width="60px" size="small">
+            <el-row type="flex" justify="center" align="middle">
+                <el-col :sm="3" :xs="24">
+                    <el-form-item label="ip" style="margin: 0">
+                        <el-input v-model="form.mysql.ip"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :sm="3" :xs="24">
+                    <el-form-item label="端口" style="margin: 0">
+                        <el-input v-model="form.mysql.port"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :sm="3" :xs="24">
+                    <el-form-item label="数据库" style="margin: 0">
+                        <el-input v-model="form.mysql.database"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :sm="3" :xs="24">
+                    <el-form-item label="用户名" style="margin: 0">
+                        <el-input v-model="form.mysql.username"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :sm="3" :xs="24">
+                    <el-form-item label="密码" style="margin: 0">
+                        <el-input v-model="form.mysql.password"></el-input>
+                    </el-form-item>
+                </el-col>
+
+                <el-col :sm="7" :xs="24">
+                    <el-form-item style="margin: 0" style="alignment: right">
+                        <el-button type="primary" plain @click="importConfig">导入</el-button>
+                        <el-button type="primary" plain @click="exportConfig">导出</el-button>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+        </el-form>
+    </div>
+    <!--        </el-header>-->
+
+    <!-- 主体区域, 数据表与字段相关配置 -->
+    <!--        <el-main>-->
+
+    <div class="main">
+        <el-row>
+
+            11<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+            asd<br>
+
+
+        </el-row>
+    </div>
+
+    <!--        </el-main>-->
+    <!--    </el-container>-->
 </div>
 </body>
 
@@ -25,8 +116,24 @@
 <script>
     new Vue({
         el: '#app',
-        data: function() {
-            return { visible: false }
+        data: {
+            form: {
+                mysql: {
+                    ip: "localhost",
+                    port: '3306',
+                    database: "demo",
+                    username: "root",
+                    password: "940324"
+                }
+            }
+        },
+        methods: {
+            importConfig() {
+                console.log("导入配置");
+            },
+            exportConfig() {
+                console.log("导出配置");
+            }
         }
     })
 </script>
